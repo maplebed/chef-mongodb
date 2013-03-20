@@ -38,6 +38,10 @@ default[:mongodb][:init_dir] = "/etc/init.d"
 
 default[:mongodb][:init_script_template] = "mongodb.init.erb"
 
+# set this to false to stop the cookbook from restarting mongodb when config files change
+default[:mongodb][:should_restart_server] = true
+
+
 case node['platform']
 when "freebsd"
   default[:mongodb][:defaults_dir] = "/etc/rc.conf.d"
